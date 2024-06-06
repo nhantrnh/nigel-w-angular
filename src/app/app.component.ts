@@ -4,11 +4,13 @@ import { MyHomeComponent } from './my-home/my-home.component';
 import { FormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { HelloComponent } from './hello.components';
+import {AuthorDetailsComponent} from './authors/author-details.component';
+import {AuthorListComponent} from './authors/author-list.component';
 import { ProgessBarComponent } from './progess-bar/progess-bar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MyHomeComponent,
+  imports: [RouterOutlet, MyHomeComponent, AuthorDetailsComponent, AuthorListComponent,
     FormsModule, CommonModule, HelloComponent,ProgessBarComponent
   ],
   templateUrl: './app.component.html',
