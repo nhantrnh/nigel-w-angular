@@ -4,12 +4,12 @@ import { MyHomeComponent } from './my-home/my-home.component';
 import { FormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { HelloComponent } from './hello.components';
-
+import { ProgessBarComponent } from './progess-bar/progess-bar.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MyHomeComponent,
-    FormsModule, CommonModule, HelloComponent,
+    FormsModule, CommonModule, HelloComponent,ProgessBarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -18,6 +18,7 @@ import { HelloComponent } from './hello.components';
 export class AppComponent {
   title = 'angular100day';
   name = 'Nigel' + VERSION.major;
+  currentProgress = 30;
   user = {
     name: 'Nigel',
     age: 20,

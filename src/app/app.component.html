@@ -1,3 +1,10 @@
+
+<button (click) = "currentProgress = currentProgress + 1">+</button>
+<app-progess-bar [progress] = "currentProgress" [progessColor]="'black'"></app-progess-bar>
+
+<br>
+<app-progess-bar [progress] = "80"></app-progess-bar>
+<br>
 {{name}}
 <app-my-home></app-my-home>
 <!-- data binding -->
@@ -85,3 +92,5 @@ Age: {{user.age}}
 <p [style]="{color: 'blue'}">
   Hello fuck you
 </p>
+
+<!--Input binding-->
