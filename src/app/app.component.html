@@ -100,3 +100,23 @@ Age: {{user.age}}
 <author-list></author-list>
 <br>
 <author-details></author-details>
+
+
+<!-- Custom Two-way Data Binding-->
+ <input type="text" [(ngModel)]="name">
+
+ <app-toggle-button #tuggle [(isActive)]="isActive"></app-toggle-button> 
+
+ <!--ViewChild/ViewChildren -->
+ <input #nameInput type="text" [ngModel]="name" (ngModelChange)="name = $event">
+
+ <button (click)="showLast = !showLast">Toggle show last</button>
+ 
+ <!-- toggleComp la instance cua ToggleComponent -->
+ <app-toggle-button [(isActive)]="isActive"></app-toggle-button>
+ <app-toggle-button [(isActive)]="isActive"></app-toggle-button>
+ <app-toggle-button [(isActive)]="isActive"></app-toggle-button>
+ <ng-container *ngIf="showLast">
+   <app-toggle-button [(isActive)]="isActive"></app-toggle-button>
+ </ng-container>
+ 

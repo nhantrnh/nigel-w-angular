@@ -1,4 +1,4 @@
-import { Component, VERSION, NgModule } from '@angular/core';
+import { Component, VERSION, NgModule, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MyHomeComponent } from './my-home/my-home.component';
 import { FormsModule } from '@angular/forms';
@@ -7,11 +7,12 @@ import { HelloComponent } from './hello.components';
 import {AuthorDetailsComponent} from './authors/author-details.component';
 import {AuthorListComponent} from './authors/author-list.component';
 import { ProgessBarComponent } from './progess-bar/progess-bar.component';
+import {ToggleButtonComponent} from './toggle.components';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MyHomeComponent, AuthorDetailsComponent, AuthorListComponent,
-    FormsModule, CommonModule, HelloComponent,ProgessBarComponent
+    FormsModule, CommonModule, HelloComponent,ProgessBarComponent, ToggleButtonComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -30,6 +31,9 @@ export class AppComponent {
   handler(){
     console.log('click');
   }
+  @ViewChildren(ToggleButtonComponent) tuggle?: QueryList<ToggleButtonComponent>;
+  @ViewChild('nameInput', {static: true}) nameInput?: ElementRef<HTMLInputElement>;
+  isActive = false;
   user1 = [
     {
       "id": 1,
@@ -262,4 +266,16 @@ export class AppComponent {
       }
     }
   ]
+  showLast = true;
+
+  ngOnInit() {
+    console.log(this.nameInput);
+    
+  }
+  ngAfterViewInit() {
+    if (this.tuggle) {
+      this.tuggle.changes.subscribe(console.log);
+    }
+  }
+
 }
