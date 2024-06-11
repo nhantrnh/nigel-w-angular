@@ -2,7 +2,15 @@ import { Component, Input } from "@angular/core";
 
 @Component({
     selector: "hello",
-    template: `<h1>Hello, {{name}}!</h1>`,
+    template: `<div class="text-5xl font-extrabold ...">
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+      Hello {{name}}
+    </span>
+    <div class="text-2xl font-bold text-gray-500">
+        Welcome to Angular100Day
+    </div>
+    
+  </div>`,
     standalone: true,
 })
 export class HelloComponent {

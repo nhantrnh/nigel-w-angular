@@ -1,5 +1,5 @@
 
-<button (click) = "currentProgress = currentProgress + 1">+</button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click) = "currentProgress = currentProgress + 1">+</button>
 <app-progess-bar [progress] = "currentProgress" [progessColor]="'black'"></app-progess-bar>
 
 <br>
@@ -13,10 +13,10 @@
 
 
 <input [type] = "'text'" [value] = "user.name">
-<button type="button" (click) = "handler()">Click Me</button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button" (click) = "handler()">Click Me</button>
 <br>
 
-<input type ="text" [(ngModel)] = "name"/>
+<input class="bg-blue-500" type ="text" [(ngModel)] = "name"/>
 <br>
 <br>
 <br>
@@ -28,9 +28,9 @@
     You r not my friend
   </div>
 </ng-template>
-<button (click)="user.age = user.age - 1">-</button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="user.age = user.age - 1">-</button>
 Age: {{user.age}}
-<button (click)="user.age = user.age + 1">+</button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="user.age = user.age + 1">+</button>
 <br>
 <br>
 <br>
@@ -40,21 +40,22 @@ Age: {{user.age}}
     You r not my friend
   </div>
 </ng-template>
-<button (click)="user.age = user.age - 1">-</button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="user.age = user.age - 1">-</button>
 Age: {{user.age}}
-<button (click)="user.age = user.age + 1">+</button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="user.age = user.age + 1">+</button>
 
 <!--NgFor Structural Directive (hiển thị danh sách)-->
 <!-- kiểm tra trước rồi mới lặp-->
 <br>
 <br>
 <br>
+
 <ul>
   <li *ngFor="let item of user1; index as idx; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
 
     {{item.name}} - {{item.id}} - {{item.phone}}
-    <span *ngIf="isFirst">This is first item</span>
-    <span *ngIf="isLast">This is last item</span>
+    <span class="bg-green-500" *ngIf="isFirst">This is first item</span>
+    <span class="bg-yellow-500"  *ngIf="isLast">This is last item</span>
     <span *ngIf="isEven">This is even item</span>
     <span *ngIf="isOdd">This is odd item</span>
     <span>{{idx}} out of {{total}} </span>
@@ -119,4 +120,7 @@ Age: {{user.age}}
  <ng-container *ngIf="showLast">
    <app-toggle-button [(isActive)]="isActive"></app-toggle-button>
  </ng-container>
+ 
+
+ <!--Content Projection-->
  

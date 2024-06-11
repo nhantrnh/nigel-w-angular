@@ -11,6 +11,7 @@ import { OnInit, OnDestroy, OnChanges } from '@angular/core';
       backgroundColor: progessColor,
       width: progress + '%'
   }"></div>
+  
 </div>
 `,
   styles: [`
